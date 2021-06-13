@@ -13,7 +13,7 @@ public class Bootle {
         this.volumeSparklingWater = volumeSparklingWater;
         System.out.println(volumeBottle + " liter bottle created");
         SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.pump();
+        sparklingWater.pump(volumeSparklingWater);
 
     }
 
@@ -23,7 +23,7 @@ public class Bootle {
         this.temperature = temperature;
         System.out.println(volumeBottle + " liter bottle with temperature of " + temperature + " created.");
         SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.pump();
+        sparklingWater.pump(volumeSparklingWater);
     }
 
     public Bootle() {
