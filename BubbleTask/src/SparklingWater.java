@@ -3,12 +3,16 @@ public class SparklingWater extends Water {
     private double volumeSparklingWater;
     private int countBubbles;
 
-    public void pump(double volumeSparklingWater) {
-        volumeSparklingWater = volumeSparklingWater * 1000;
-        for (int i = 1; i <= volumeSparklingWater; i++) {
-            countBubbles = i * 10;
-        }
-        System.out.println("Count of bubbles " + countBubbles);
+
+    public void pump(Bubble[] bubbles) {
+        Bubble bubbles = new Bubble[(int) (volumeSparklingWater * 10000)];
+
+        System.out.println("Count of bubbles " + bubbles);
+        //volumeSparklingWater = volumeSparklingWater * 1000;
+        //for (int i = 1; i <= volumeSparklingWater; i++) {
+           // countBubbles = i * 10;
+       // }
+       //System.out.println("Count of bubbles " + countBubbles);
     }
 
     public void degas(double volumeSparklingWater) {
