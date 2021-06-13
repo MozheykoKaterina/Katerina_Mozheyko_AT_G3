@@ -1,45 +1,28 @@
 public class Bootle {
 
     private double volumeBottle;
-    private double volumeSparklingWater;
-    private double temperature;
+    private SparklingWater water;
+    //Bubble[] bubbles;
 
 
-    //SparklingWater sparklingWater = new SparklingWater();
-
-
-    public Bootle(double volumeBottle, double volumeSparklingWater) {
+    public Bootle(double volumeBottle) {
         this.volumeBottle = volumeBottle;
-        this.volumeSparklingWater = volumeSparklingWater;
-        System.out.println(volumeBottle + " liter bottle created");
-        SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.pump(volumeSparklingWater);
+        System.out.println(volumeBottle + " liter bottle created!");
+        Bubble[] bubbles = new Bubble[(int) (volumeBottle * 10000)];
+        SparklingWater water = new SparklingWater();
+        water.pump(bubbles);
 
-    }
+        }
 
-    public Bootle(double volumeBottle, double volumeSparklingWater, double temperature) {
-        this.volumeBottle = volumeBottle;
-        this.volumeSparklingWater = volumeSparklingWater;
-        this.temperature = temperature;
-        System.out.println(volumeBottle + " liter bottle with temperature of " + temperature + " created.");
-        SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.pump(volumeSparklingWater);
-    }
-
-    public Bootle() {
-    }
 
     public void open() {
-        System.out.println(volumeBottle + " liter bottle opened");
-        SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.degas(volumeSparklingWater);
+        this.volumeBottle = volumeBottle;
+        System.out.println(volumeBottle + " liter bottle opened!");
+        Bubble[] bubbles = new Bubble[(int) (volumeBottle * 10000)];
+        SparklingWater water = new SparklingWater();
+        water.degas(bubbles);
     }
 
-    public void openTemp() {
-        System.out.println(volumeBottle + " liter bottle with temperature of " + temperature + " opened.");
-        SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.degasTemp(volumeSparklingWater, temperature);
-    }
 
     public double getVolumeBottle() {
         return volumeBottle;
@@ -47,14 +30,6 @@ public class Bootle {
 
     public void setVolumeBottle(double volumeBottle) {
         this.volumeBottle = volumeBottle;
-    }
-
-    public double getVolumeWater() {
-        return volumeSparklingWater;
-    }
-
-    public void setVolumeWater(double volumeWater) {
-        this.volumeSparklingWater = volumeWater;
     }
 
 }
