@@ -1,5 +1,7 @@
 package src.main.java.tasks.day5;
 
+import src.main.java.tasks.day5.Image;
+
 public class Runner {
 
     public static void main(String[] args) {

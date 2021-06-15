@@ -1,7 +1,5 @@
 package src.main.java.tasks.day5;
 
-import src.main.java.tasks.day3.Sort;
-
 public class Image {
 
     public void image() {

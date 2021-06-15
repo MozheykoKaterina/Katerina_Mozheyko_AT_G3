@@ -1,4 +1,4 @@
-package src.main.java.tasks.day3;
+package main.java.tasks.day3;
 
 public class Square {
 

@@ -1,11 +1,12 @@
-package main.java.projects.liquid;
+package src.main.java.project.liquid;
 
 public class Water {
-    private String color;
-    private String transparency;
-    private String smell;
-    private int temperature;
-    private double volumeWater;
+
+    private String color = "no";
+    private String transparency = "transparent";
+    private String smell = "no";
+    private int temperature = 0;
+
 
     public String getColor() {
         return color;
@@ -39,12 +40,5 @@ public class Water {
         this.temperature = temperature;
     }
 
-    public double getVolume() {
-        return volumeWater;
     }
-
-    public void setVolume(double volume) {
-        this.volumeWater = volumeWater;
-    }
-}
 
