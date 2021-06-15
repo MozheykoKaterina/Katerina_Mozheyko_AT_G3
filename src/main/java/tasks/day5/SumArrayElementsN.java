@@ -31,7 +31,6 @@ public class SumArrayElementsN {
         System.out.println();
         System.out.println(a);
         System.out.println();
-        System.out.println();
     }
 }
 
