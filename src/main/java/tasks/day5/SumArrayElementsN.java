@@ -9,7 +9,6 @@ public class SumArrayElementsN {
         int[] array = new int[20];
         Random random = new Random();
 
-
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(20);
         }
@@ -21,7 +20,6 @@ public class SumArrayElementsN {
         System.out.println();
 
         int a = 0;
-
         for (int i = 0; i < array.length; i++) {
             if ((i + 1) % n == 0) {
                 System.out.print(array[i] + " ");

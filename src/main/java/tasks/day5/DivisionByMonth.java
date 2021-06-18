@@ -9,7 +9,6 @@ public class DivisionByMonth {
         int[] array = new int[20];
         Random random = new Random();
 
-
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(100);
         }
@@ -21,16 +20,15 @@ public class DivisionByMonth {
         System.out.println();
 
         int a = 0;
-
         for (int i = 0; i < array.length; i++) {
             if (array[i] % n == 0) {
                 System.out.print(array[i] + " ");
                 a = array[i] + a;
             }
         }
+
         System.out.println();
-        System.out.println(a);
-        System.out.println();
+        System.out.print(a);
         System.out.println();
     }
 }

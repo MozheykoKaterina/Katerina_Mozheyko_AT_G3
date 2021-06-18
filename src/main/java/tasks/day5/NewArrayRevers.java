@@ -11,20 +11,22 @@ public class NewArrayRevers {
         for (int i = 0; i < array.length; i++) {
             array[i] = random.nextInt(20);
         }
+
         for (int i : array) {
             System.out.print(i + " ");
         }
         System.out.println();
 
-        int[] array1 = new int[20];
-        //for (int c = 0; c < array.length; c++) {
+        int[] arrayRevers = new int[20];
         for (int i = array.length - 1; i >= 0; i--) {
             if (array[i] > n) {
-                array1[i] = array[i];
-                System.out.print(array1[i] + " ");
+                arrayRevers[i] = array[i];
+                System.out.print(arrayRevers[i] + " ");
             }
         }
         System.out.println();
         System.out.println();
     }
+
 }
+
