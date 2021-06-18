@@ -1,47 +1,65 @@
 package src.main.java.project.liquid;
 
+import src.main.java.project.boxing.Bottle;
 import src.main.java.project.object.Bubble;
 
 public class SparklingWater extends Water {
 
     boolean isOpened;
     Bubble[] bubbles;
+    double volume;
 
-    public SparklingWater() {
+    public void SparklingWater(double volume) {
+        this.volume = volume;
+        isOpened(volume);
 
-    }
-
-    public SparklingWater(boolean isOpened) {
-        this.isOpened = isOpened;
     }
 
     public void pump(Bubble[] bubbles) {
-        for (int i = 0; i < bubbles.length; i++) {
-            //bubbles = new Bubble[i];
+        this.bubbles = bubbles;
+        int i;
+        for (i = 0; i < bubbles.length; i++) {
+            Bubble bubble = new Bubble();
+            bubble = bubbles[i];
         }
-        System.out.println("Bubbles " + bubbles.length);
+        System.out.printf("There are " + i + " bubbles in the bottle.").println();
     }
 
-    public void setOpened(boolean isOpened) {
+    public void setOpened(boolean isOpened, double volume) {
+        isOpened = true;
+        System.out.printf("Water is open").println();
+        SparklingWater water = new SparklingWater();
+        water.SparklingWater(volume);
 
     }
 
-    private void setOpened() {
-        SparklingWater sparklingWater = new SparklingWater();
-        sparklingWater.degas(bubbles);
-    }
-
-    public void degas(Bubble[] bubbles) {
-        for (int i = bubbles.length; i >= 0; i--) {
-            new Bubble().cramp();
+    private void isOpened(double volume) {
+        Thread thread = new Thread();
+        thread.start();
+        if (isOpened = true) {
+            Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
+            new SparklingWater().degas(bubbles);
         }
-        System.out.println("Bubbles " + bubbles.length);
 
+    }
+
+    private void degas(Bubble[] bubbles) {
+        int speed = 10 + 5;
+        int countBubbles = bubbles.length;
+        int time;
+        time = countBubbles / speed;
+        System.out.println(time);
+        new Bubble().cramp();
     }
 
     public boolean isSparkle() {
         return true;
-
     }
 
 }
+
+
+
+
+
+

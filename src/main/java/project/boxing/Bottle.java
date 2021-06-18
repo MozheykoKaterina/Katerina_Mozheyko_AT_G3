@@ -10,23 +10,24 @@ public class Bottle {
 
     public Bottle(double volume) {
         this.volume = volume;
-        System.out.println(volume + " liter bottle created!");
+        System.out.printf(volume + " liter bottle created!").println();
         Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
-
         SparklingWater water = new SparklingWater();
         water.pump(bubbles);
 
     }
 
     public void open() {
-        this.volume = volume;
-        System.out.println(volume + " liter bottle opened!");
-        Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
+        System.out.printf(volume + " liter bottle opened!").println();
         SparklingWater water = new SparklingWater();
-        water.degas(bubbles);
+        water.setOpened(true, volume);
+
     }
 
     public void warm(int temperature) {
+        SparklingWater water = new SparklingWater();
+        water.setTemperature(temperature);
+        System.out.printf("Warming water to: %s", temperature).println();
 
     }
 
@@ -35,7 +36,8 @@ public class Bottle {
 
     }
 
-    public void setWater(SparklingWater water){
+    public void setWater(SparklingWater water) {
+        this.water = water;
 
     }
 

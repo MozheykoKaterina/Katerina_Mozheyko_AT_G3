@@ -7,7 +7,6 @@ public class Water {
     private String smell = "no";
     private int temperature = 0;
 
-
     public String getColor() {
         return color;
     }
