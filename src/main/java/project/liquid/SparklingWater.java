@@ -1,7 +1,7 @@
-package src.main.java.project.liquid;
+package main.java.project.liquid;
 
-import src.main.java.project.boxing.Bottle;
-import src.main.java.project.object.Bubble;
+import main.java.project.boxing.Bottle;
+import main.java.project.object.Bubble;
 
 public class SparklingWater extends Water {
 

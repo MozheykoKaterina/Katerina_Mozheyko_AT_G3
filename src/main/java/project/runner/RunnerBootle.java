@@ -1,7 +1,7 @@
-package src.main.java.project.runner;
+package main.java.project.runner;
 
-import src.main.java.project.boxing.Bottle;
-import src.main.java.project.liquid.SparklingWater;
+import main.java.project.boxing.Bottle;
+import main.java.project.liquid.SparklingWater;
 
 public class RunnerBootle {
 

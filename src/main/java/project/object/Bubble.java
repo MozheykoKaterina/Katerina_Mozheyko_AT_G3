@@ -1,4 +1,4 @@
-package src.main.java.project.object;
+package main.java.project.object;
 
 public class Bubble {
 
