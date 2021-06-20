@@ -1,4 +1,4 @@
-package main.java.tasks.day3;
+package main.java.tasks.day1;
 
 import java.util.Random;
 

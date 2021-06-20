@@ -1,8 +1,8 @@
-package src.main.java.project.boxing;
+package main.java.project.boxing;
 
-import src.main.java.project.liquid.SparklingWater;
-import src.main.java.project.liquid.Water;
-import src.main.java.project.object.Bubble;
+import main.java.project.liquid.SparklingWater;
+import main.java.project.liquid.Water;
+import main.java.project.object.Bubble;
 
 public class Bottle {
     private double volume;

@@ -1,4 +1,4 @@
-package src.main.java.project.liquid;
+package main.java.project.liquid;
 
 public class Water {
 
