@@ -4,7 +4,9 @@ import java.util.Random;
 
 public class DivisionByMonth {
 
-    public void divisionByMonth(int n) {
+     public void divisionByMonth(int n) {
+
+         System.out.println(n);
 
         int[] array = new int[20];
         Random random = new Random();
@@ -28,8 +30,8 @@ public class DivisionByMonth {
         }
 
         System.out.println();
-        System.out.print(a);
         System.out.println();
+
     }
 }
 
