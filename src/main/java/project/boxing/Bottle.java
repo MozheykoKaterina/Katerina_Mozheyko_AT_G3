@@ -1,12 +1,16 @@
 package main.java.project.boxing;
 
 import main.java.project.liquid.SparklingWater;
-import main.java.project.liquid.Water;
 import main.java.project.object.Bubble;
 
 public class Bottle {
+
     private double volume;
     private SparklingWater water;
+
+    public Bottle() {
+
+    }
 
     public Bottle(double volume) {
         this.volume = volume;
@@ -14,10 +18,12 @@ public class Bottle {
         Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
         SparklingWater water = new SparklingWater();
         water.pump(bubbles);
+        Thread thread = new Thread();
+        thread.start();
 
     }
 
-    public void open() {
+        public void open() {
         System.out.printf(volume + " liter bottle opened!").println();
         SparklingWater water = new SparklingWater();
         water.setOpened(true, volume);
@@ -25,9 +31,8 @@ public class Bottle {
     }
 
     public void warm(int temperature) {
-        SparklingWater water = new SparklingWater();
-        water.setTemperature(temperature);
         System.out.printf("Warming water to: %s", temperature).println();
+
 
     }
 
@@ -50,4 +55,3 @@ public class Bottle {
     }
 
 }
-
