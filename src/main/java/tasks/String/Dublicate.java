@@ -11,6 +11,7 @@ public class Dublicate {
                     if (dublicate[i].equals(dublicate[a])) {
                         dublicate[a] = dublicate[i];
                         System.out.print(dublicate[i] + " ");
+                        
                     }
                 }
             }
