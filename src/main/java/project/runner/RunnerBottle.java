@@ -1,7 +1,6 @@
 package main.java.project.runner;
 
 import main.java.project.boxing.Bottle;
-import main.java.project.liquid.SparklingWater;
 
 public class RunnerBootle {
 
@@ -18,14 +17,6 @@ public class RunnerBootle {
         bottle.open();
         bootle2.open();
         bootle3.open();
-
-
-
-
-
-
-
-
 
     }
 
