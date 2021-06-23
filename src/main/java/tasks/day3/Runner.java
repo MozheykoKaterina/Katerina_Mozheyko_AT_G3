@@ -1,7 +1,6 @@
 package main.java.tasks.day3;
 
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.Date;
 
 public class Runner {
@@ -12,7 +11,7 @@ public class Runner {
         new SumArrayElementsN().sumArrayElementsN(3);
 
         Date date = new Date();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        LocalDate localDate = LocalDate.now();
         int day = localDate.getDayOfMonth();
         new DivisionByMonth().divisionByMonth(day);
 
