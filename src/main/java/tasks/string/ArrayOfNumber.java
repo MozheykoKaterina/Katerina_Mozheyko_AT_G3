@@ -2,9 +2,9 @@ package main.java.tasks.string;
 
 public class ArrayOfNumber {
 
-    public void arrayOfNumber(String input) {
+    public void arrayOfNumber(String str) {
 
-        String arrayOfNumber = input.replaceAll("[^0-9]", "");
+        String arrayOfNumber = str.replaceAll("[^0-9]", "");
         String[] array = arrayOfNumber.split("");
 
         for (String i : array) {
@@ -14,10 +14,11 @@ public class ArrayOfNumber {
         System.out.println();
 
         int[] arrayOnlyNumber = new int[array.length];
-        for (int c = 0; c < array.length; c++) {
-            arrayOnlyNumber[c] = Integer.parseUnsignedInt(array[c]);
-            System.out.print(arrayOnlyNumber[c]);
+        for (int i = 0; i < array.length; i++) {
+            arrayOnlyNumber[i] = Integer.parseUnsignedInt(array[i]);
+            System.out.print(arrayOnlyNumber[i]);
         }
+        System.out.println();
     }
 }
 
