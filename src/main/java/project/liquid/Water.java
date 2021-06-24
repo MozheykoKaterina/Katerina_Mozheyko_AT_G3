@@ -7,6 +7,10 @@ public class Water {
     private String smell = "no";
     private int temperature = 0;
 
+    public Water() {
+        int temperature = 0;
+    }
+
     public String getColor() {
         return color;
     }
@@ -39,5 +43,4 @@ public class Water {
         this.temperature = temperature;
     }
 
-    }
-
+}

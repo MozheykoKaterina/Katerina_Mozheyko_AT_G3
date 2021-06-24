@@ -1,22 +1,19 @@
 package main.java.project.liquid;
 
-import main.java.project.boxing.Bottle;
 import main.java.project.object.Bubble;
 
 public class SparklingWater extends Water {
 
-    boolean isOpened;
-    Bubble[] bubbles;
+    private boolean isOpened;
+    private Bubble[] bubbles;
     double volume;
+    int temperature;
 
-    public void SparklingWater(double volume) {
-        this.volume = volume;
+    public SparklingWater(double volume) {
         isOpened(volume);
-
     }
 
     public void pump(Bubble[] bubbles) {
-        this.bubbles = bubbles;
         int i;
         for (i = 0; i < bubbles.length; i++) {
             Bubble bubble = new Bubble();
@@ -25,41 +22,26 @@ public class SparklingWater extends Water {
         System.out.printf("There are " + i + " bubbles in the bottle.").println();
     }
 
-    public void setOpened(boolean isOpened, double volume) {
-        isOpened = true;
+    public void setOpened(boolean isOpened) {
+        this.isOpened = true;
         System.out.printf("Water is open").println();
-        SparklingWater water = new SparklingWater();
-        water.SparklingWater(volume);
-
     }
 
     private void isOpened(double volume) {
-        Thread thread = new Thread();
-        thread.start();
+        Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
+        //this.isOpened = isOpened;
         if (isOpened = true) {
-            Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
-            new SparklingWater().degas(bubbles);
+            degas(bubbles);
         }
-
     }
 
     private void degas(Bubble[] bubbles) {
-        int speed = 10 + 5;
-        int countBubbles = bubbles.length;
-        int time;
-        time = countBubbles / speed;
-        System.out.println(time);
+        this.bubbles = bubbles;
+        for (int i = bubbles.length; i > 0; i--)
         new Bubble().cramp();
     }
 
     public boolean isSparkle() {
         return true;
     }
-
 }
-
-
-
-
-
-
