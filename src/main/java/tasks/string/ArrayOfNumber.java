@@ -21,5 +21,3 @@ public class ArrayOfNumber {
         System.out.println();
     }
 }
-
-

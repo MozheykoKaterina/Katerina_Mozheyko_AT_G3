@@ -23,10 +23,27 @@ public class RunnerString {
         System.out.println(str);
         NewString newString = new NewString();
         newString.newString(str);
+
+        String we = "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.6 denied";
+
+        String wer = we.replaceAll(we.substring(0, 22), "");
+        System.out.println(wer);
+
+        String[] qw = wer.split("\n");
+
+        for (int i = 0; i < qw.length; i++) {
+            for (int r = i + 1; r < qw.length; r++) {
+                qw[i].equals(qw[r]);
+                if (false) {
+                    System.out.println(1);
+                } else {
+                    System.out.println(0);
+                }
+            }
+        }
     }
 }
-
-
 
 
 

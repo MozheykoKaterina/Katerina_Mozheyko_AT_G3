@@ -2,7 +2,7 @@ package main.java.project.runner;
 
 import main.java.project.boxing.Bottle;
 
-public class RunnerBootle {
+public class RunnerBottle {
 
     public static void main(String[] args) {
 
@@ -17,8 +17,5 @@ public class RunnerBootle {
         bottle.open();
         bootle2.open();
         bootle3.open();
-
     }
-
 }
-
