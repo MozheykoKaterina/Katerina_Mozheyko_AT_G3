@@ -36,16 +36,39 @@ public class Log {
 
         String[][] array2 = new String[array1.length][3]; //создаю итоговый массив
 
-        int count = 0;
-        for (int d = 0; d < array1.length; d++) { //буду искать каждое значение первоначального массива в итоговом
-            for (int d1 = 0; d1 < 3; d++) {
-                for (int e = 0; e < array2.length; e++) {
-                    for (int e1 = 0; e1 < 3; e++) {//if (array1[d][0] != array2[e][0]) {
+        for (int d = 0; d < array1.length; d++) { //буду итерировать каждую позицию массива
+            int count = 0;
+            int countOk = 0;
+            int countFa = 0;
+            String a = "Ok";
+            String b = "Failed";
+            for (int e = 0; e < array1.length; e++) { //буду сравнивать с каждой позицией в массиве
+                for (int e1 = 0; e1 < 3; e1++) {
+                    if (array1[d][0] == array1[e][0]) {
+                        if (e > d) {                     //если е позиция больше d, то бужем записывать
+                            //array2[count][0] = array1[e][0];
+                            if (array1[d][1] == null) {
+                                array2[count][1] = array1[count][e1];
+                                countOk = countOk + 1;
+                            } else {
+                                array2[count][2] = array1[count][e1];
+                                countFa = countFa + 1;
+                            }
+                        } else {                        ///а если меньше, то увеличиваем количество попыток
+                            array2[count][0] = array1[e][e1];
+                            count = count + 1;
+                            if (array1[d][1] == null) {
+                                array2[count][1] = array1[count][e1];
+                                countOk = countOk + 1;
+                            } else {
+                                array2[count][2] = array1[count][e1];
+                                countFa = countFa + 1;
+                            }
+                        }
+                        System.out.println(array2[d][0] + " ok " + countOk + " failed " + countFa);
                     }
-                    //System.out.println(array2[e][e1]);
                 }
             }
-            System.out.println();
         }
     }
 }
