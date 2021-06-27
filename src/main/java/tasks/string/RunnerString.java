@@ -8,42 +8,27 @@ public class RunnerString {
 
     public static void main(String[] args) throws ParseException {
 
-        String duplicate = "I am java java i one two I I";
-        new Duplicate().duplicate(duplicate);
+        new Duplicate().duplicate("I am java java i one two I I");
         System.out.println();
 
-        String arrayOfNumber = "J9a8v7a6j5v4a3ja2v1a0";
-        new ArrayOfNumber().arrayOfNumber(arrayOfNumber);
+        new ArrayOfNumber().arrayOfNumber("J9a8v7a6j5v4a3ja2v1a0");
 
-        CurrentTime currentTime = new CurrentTime();
-        currentTime.currentTime();
+        new CurrentTime().currentTime();
 
         Date date = new Date();
         String str = new SimpleDateFormat("hh:mm dd.MM.yyyy").format(new Date());
-        System.out.println(str);
-        NewString newString = new NewString();
-        newString.newString(str);
+        new NewString().newString(str);
 
-        String we = "access_log.2020.09.07 212.168.101.5 granted\n" +
-                "access_log.2020.09.07 212.168.101.6 denied";
+        String log = "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.6 denied\n" +
+                "access_log.2020.09.07 212.168.101.5 granted";
 
-        String wer = we.replaceAll(we.substring(0, 22), "");
-        System.out.println(wer);
-
-        String[] qw = wer.split("\n");
-
-        for (int i = 0; i < qw.length; i++) {
-            for (int r = i + 1; r < qw.length; r++) {
-                qw[i].equals(qw[r]);
-                if (false) {
-                    System.out.println(1);
-                } else {
-                    System.out.println(0);
-                }
-            }
-        }
+        new Log().log(log);
     }
 }
+
 
 
 
