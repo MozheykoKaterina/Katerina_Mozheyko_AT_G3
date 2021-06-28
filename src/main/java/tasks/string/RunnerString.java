@@ -20,10 +20,20 @@ public class RunnerString {
         new NewString().newString(str);
 
         String log = "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 denied\n" +
                 "access_log.2020.09.07 212.168.101.6 denied\n" +
                 "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 denied\n" +
                 "access_log.2020.09.07 212.168.101.6 denied\n" +
-                "access_log.2020.09.07 212.168.101.5 granted";
+                "access_log.2020.09.07 212.168.101.6 granted\n" +
+                "access_log.2020.09.07 212.168.101.7 denied\n" +
+                "access_log.2020.09.07 212.168.101.5 granted\n" +
+                "access_log.2020.09.07 212.168.101.8 granted\n" +
+                "access_log.2020.09.07 212.168.101.5 denied\n" +
+                "access_log.2020.09.07 212.168.101.6 denied";
 
         new Log().log(log);
     }
