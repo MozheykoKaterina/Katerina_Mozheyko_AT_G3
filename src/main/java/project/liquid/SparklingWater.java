@@ -29,8 +29,7 @@ public class SparklingWater extends Water {
 
     private void isOpened(double volume) {
         Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
-        //this.isOpened = isOpened;
-        if (isOpened = true) {
+        if (isOpened) {
             degas(bubbles);
         }
     }
