@@ -1,74 +1,83 @@
 package main.java.tasks.string;
 
-import java.util.Arrays;
-
 public class Log {
+
+    String newCountAttempt;
 
     public void log(String log) {
 
-        String log1 = log.replaceAll(log.substring(0, 22), "");
+        String ipAttempt = log.replaceAll(log.substring(0, 22), "");
+        System.out.println(ipAttempt);
+        String[] ipAttemptArray = ipAttempt.split("\n");
+        String[][] ipAttemptCountArray = new String[ipAttemptArray.length][3];
 
-        String[] array = log1.split("\n"); //одномерный массив
+        int count = 0;
+        for (int i = 0; i < ipAttemptArray.length; i++) {
 
-        String[][] array1 = new String[array.length][3]; //пустой двумерный массив
+            for (int d = 0; d < ipAttemptCountArray.length; d++) {
 
-        for (int i = 0; i < array1.length; i++) { //заполняю двумерный массив
+                if (ipAttemptArray[i].substring(0, 13).equals(ipAttemptCountArray[d][0])) { //если есть совпадение, то будем увеличивать количество попыток
 
-            String a = array[i].substring(0, 13); //IP
-            String b = array[i].substring(14, 20); //granted or denied
-            String c = null; //
-
-            for (int j = 0; j < array1[i].length; j++) {
-
-                if (array[i].substring(14, 20).equals("grante")) {
-                    array1[i][0] = a;
-                    array1[i][1] = b;
-                    array1[i][2] = c;
-                } else {
-                    array1[i][0] = a;
-                    array1[i][1] = c;
-                    array1[i][2] = b;
-                }
-                System.out.print(array1[i][j]);
-            }
-            System.out.println();
-        }
-
-        String[][] array2 = new String[array1.length][3]; //создаю итоговый массив
-
-        for (int d = 0; d < array1.length; d++) { //буду итерировать каждую позицию массива
-            int count = 0;
-            int countOk = 0;
-            int countFa = 0;
-            String a = "Ok";
-            String b = "Failed";
-            for (int e = 0; e < array1.length; e++) { //буду сравнивать с каждой позицией в массиве
-                for (int e1 = 0; e1 < 3; e1++) {
-                    if (array1[d][0] == array1[e][0]) {
-                        if (e > d) {                     //если е позиция больше d, то бужем записывать
-                            //array2[count][0] = array1[e][0];
-                            if (array1[d][1] == null) {
-                                array2[count][1] = array1[count][e1];
-                                countOk = countOk + 1;
-                            } else {
-                                array2[count][2] = array1[count][e1];
-                                countFa = countFa + 1;
-                            }
-                        } else {                        ///а если меньше, то увеличиваем количество попыток
-                            array2[count][0] = array1[e][e1];
-                            count = count + 1;
-                            if (array1[d][1] == null) {
-                                array2[count][1] = array1[count][e1];
-                                countOk = countOk + 1;
-                            } else {
-                                array2[count][2] = array1[count][e1];
-                                countFa = countFa + 1;
-                            }
+                    if (ipAttemptArray[i].substring(14, 20).equals("grante")) { //увеличиваем количество успешных попыток
+                        if (ipAttemptCountArray[d][1] == null) {
+                            String countAttempt = "0";
+                            countAttemptParse(countAttempt);
+                            ipAttemptCountArray[d][1] = newCountAttempt;
+                        } else {
+                            String countAttempt = ipAttemptCountArray[d][1];
+                            countAttemptParse(countAttempt);
+                            ipAttemptCountArray[d][1] = newCountAttempt;
                         }
-                        System.out.println(array2[d][0] + " ok " + countOk + " failed " + countFa);
+                    } else {   //увеличиваем количество неуспешных попыток
+                        if (ipAttemptCountArray[d][2] == null) {
+                            String countAttempt = "0";
+                            countAttemptParse(countAttempt);
+                            ipAttemptCountArray[d][2] = newCountAttempt;
+                        } else {
+                            String countAttempt = ipAttemptCountArray[d][2];
+                            countAttemptParse(countAttempt);
+                            ipAttemptCountArray[d][2] = newCountAttempt;
+                        }
+                    }
+                    break;
+
+                } else { //2.если такого id нету, то будем заполнять в массив
+
+                    if (ipAttemptCountArray[d][0] == null) {
+                        if (ipAttemptArray[i].substring(14, 20).equals("grante")) {
+                            ipAttemptCountArray[d][0] = ipAttemptArray[i].substring(0, 13);
+                            ipAttemptCountArray[d][1] = "1";
+                            ipAttemptCountArray[d][2] = "0";
+                            count = count + 1;
+                        } else {
+                            ipAttemptCountArray[d][0] = ipAttemptArray[i].substring(0, 13);
+                            ipAttemptCountArray[d][1] = "0";
+                            ipAttemptCountArray[d][2] = "1";
+                            count = count + 1;
+                        }
+                        break;
+
                     }
                 }
             }
         }
+
+        for (int e = 0; e < count; e++) {
+            System.out.println("ip " + ipAttemptCountArray[e][0] + ": " + "ok - " + ipAttemptCountArray[e][1] + ", failed - " + ipAttemptCountArray[e][2]);
+        }
+    }
+
+    public String countAttemptParse(String countAttempt) {
+        Integer intCountAttempt = Integer.valueOf(countAttempt);
+        intCountAttempt = intCountAttempt + 1;
+        String newcountAttempt = String.valueOf(intCountAttempt);
+        this.newCountAttempt = newcountAttempt;
+        return newCountAttempt;
     }
 }
+
+
+
+
+
+
