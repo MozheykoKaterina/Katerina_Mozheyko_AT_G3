@@ -74,9 +74,3 @@ public class Log {
         return newCountAttempt;
     }
 }
-
-
-
-
-
-
