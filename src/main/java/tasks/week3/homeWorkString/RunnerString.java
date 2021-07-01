@@ -36,13 +36,6 @@ public class RunnerString {
                 "access_log.2020.09.07 212.168.101.6 denied";
 
         new Log().log(log);
+
     }
 }
-
-
-
-
-
-
-
-

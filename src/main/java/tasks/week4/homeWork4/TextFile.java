@@ -18,8 +18,8 @@ public class TextFile {
             int countWithoutNumber = lineWithoutNumber.length();
             String lineWithoutSign = lineWithoutNumber.replaceAll("[\\\\?\\\\.;:'+\\\"]", "");
             int countWithoutSign = lineWithoutSign.length(); //длина без знаков
-            String line3 = lineWithoutSign.replaceAll("  ", " ");
-            String[] arrayWord = line3.split("\\s");
+            String lineWord = lineWithoutSign.replaceAll("  ", " ");
+            String[] arrayWord = lineWord.split("\\s");
             countWordSign = countWordSign + countWithoutNumber - countWithoutSign + arrayWord.length;
         }
         System.out.println("Number of words and punctuation marks: " + countWordSign);

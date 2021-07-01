@@ -4,8 +4,9 @@ import java.io.IOException;
 
 public class Runner {
 
-        public static void main(String[] args) throws IOException {
-            TextFile.read();
-        }
+    public static void main(String[] args) throws IOException {
+        TextFile.read();
+        Writen.write();
+        Way.read();
     }
-
+}

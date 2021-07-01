@@ -60,19 +60,16 @@ public class Runner {
 
         for (String sx : array) {
             System.out.println(sx);
-
         }
 
         DateFormat formatter = new SimpleDateFormat("dd/mm/yyyy");
         Date date = formatter.parse("19/06/2021");
 
         System.out.println(date.toString());
-
     }
 
     public static void method(Integer x) {
         System.out.println(x.toString());
 
     }
-
 }
