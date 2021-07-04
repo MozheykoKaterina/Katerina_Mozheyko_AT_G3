@@ -1,6 +1,8 @@
 package main.java.project.liquid;
 
-public class Water {
+import main.java.project.boxing.Transformable;
+
+public class Water implements Transformable {
 
     private String color = "no";
     private String transparency = "transparent";
