@@ -4,7 +4,7 @@ import java.io.*;
 
 public class Stocktaking {
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    /*public static void main(String[] args) throws IOException, ClassNotFoundException {
         writeSer();
         readSer();
     }
@@ -24,7 +24,7 @@ public class Stocktaking {
         Warehouse box = (Warehouse) ois.readObject();
         ois.close();
         System.out.println(box);
-    }
+    }*/
 }
 
 
