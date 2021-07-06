@@ -1,0 +1,34 @@
+package main.java.tasks.week5.homeWork.fields;
+
+import java.util.Objects;
+
+public class Chair {
+
+    int height;
+    int width;
+
+    public Chair(int height, int width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    public String toString() {
+        return "Chair{" +
+                "height=" + height + "\" + " +
+                ", width=" + width +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Chair chair = (Chair) o;
+        return height == chair.height && width == chair.width && Objects.equals(height, width);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(height, width);
+    }
+}
