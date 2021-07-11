@@ -22,4 +22,15 @@ public class Bubble {
         return volume;
     }
 
+    public void setVolume(double volume) {
+        this.volume = volume;
+    }
+
+    public String getStructure() {
+        return structure;
+    }
+
+    public void setStructure(String structure) {
+        this.structure = structure;
+    }
 }

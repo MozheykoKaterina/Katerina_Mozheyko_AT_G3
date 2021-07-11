@@ -2,25 +2,21 @@ package main.java.project.liquid;
 
 import main.java.project.object.Bubble;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class SparklingWater extends Water {
 
     private boolean isOpened;
-    private Bubble[] bubbles;
-    double volume;
-    int temperature;
+    private Bubble bubble;
 
     public SparklingWater(double volume) {
         isOpened(volume);
     }
 
-    public void pump(Bubble[] bubbles) {
-        int i;
-        for (i = 0; i < bubbles.length; i++) {
-            Bubble bubble = new Bubble();
-            bubble = bubbles[i];
+    public void pump(List<Bubble> bubble) {
+        System.out.printf("There are " + bubble.size() + " bubbles in the bottle.").println();
         }
-        System.out.printf("There are " + i + " bubbles in the bottle.").println();
-    }
 
     public void setOpened(boolean isOpened) {
         this.isOpened = true;
@@ -28,16 +24,22 @@ public class SparklingWater extends Water {
     }
 
     private void isOpened(double volume) {
-        Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
-        if (isOpened) {
-            degas(bubbles);
+        Bubble[] bubbles = new Bubble[(int)(volume * 10000)];
+        List<Bubble> bubble = Arrays.asList(bubbles);
+        for (int i = 0; i < bubble.size(); i++) {
+            bubble.set(i, new Bubble());
         }
+        if (isOpened) {
+            degas(bubble);
+       }
     }
 
-    private void degas(Bubble[] bubbles) {
-        this.bubbles = bubbles;
-        for (int i = bubbles.length; i > 0; i--)
-        new Bubble().cramp();
+    private void degas(List<Bubble> bubble) {
+        int speed = (10 + 5) * getTemperature();
+        for (Bubble bubble1 : bubble) {
+            bubble.stream().skip(speed);
+            new Bubble().cramp();
+        }
     }
 
     public boolean isSparkle() {

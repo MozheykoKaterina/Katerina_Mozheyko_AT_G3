@@ -1,18 +1,15 @@
 package main.java.tasks.week5.homeWork;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Figures {
 
     public static void main(String[] args) {
 
-        List<String> figures = new ArrayList<>();
-        figures.add("Овал");
-        figures.add("Прямоугольник");
-        figures.add("Круг");
-        figures.add("Квадрат");
-        figures.add("Эллипс");
+        String[] array = {"Овал", "Прямоугольник", "Круг", "Квадрат", "Эллипс"};
+        List<String> figures = new ArrayList<>(Arrays.asList(array));
 
         for (String figure : figures ) {
             System.out.print(figure + "-");
