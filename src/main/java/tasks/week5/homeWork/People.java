@@ -28,5 +28,12 @@ public class People {
             System.out.print(people + " ");
         }
         System.out.println();
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println(peoples.toString());
+
+        }
+
+
     }
 }

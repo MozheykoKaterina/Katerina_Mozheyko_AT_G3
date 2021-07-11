@@ -6,28 +6,26 @@ import main.java.project.material.Material;
 import main.java.project.object.Bubble;
 import main.java.project.runner.MyThread;
 
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Bottle extends Vessel {
 
-    private double volume;
-    private double diameter;
-    private int weight;
-    private Material material;
     private SparklingWater water;
-
-    public Bottle(double volume, double diameter, int weight, Material material) {
-        super(volume, diameter, weight, material);
-    }
 
     public Bottle(double volume) {
         super(volume, 3, 300, new Glass());
-        this.volume = volume;
+        this.water = new SparklingWater(volume);
         System.out.printf(volume + " liter bottle created!").println();
-        setWater(water);
-        SparklingWater water = new SparklingWater(volume);
-        Bubble[] bubbles = new Bubble[(int) (volume * 10000)];
-        water.pump(bubbles);
-        MyThread myThread = new MyThread();
-        myThread.start();
+        Bubble[] bubbles = new Bubble[(int)(volume * 10000)];
+        List<Bubble> bubble = Arrays.asList(bubbles);
+        for (int i = 0; i < bubble.size(); i++) {
+            bubble.set(i, new Bubble());
+        }
+        water.pump(bubble);
+
     }
 
     interface Containable {
@@ -35,44 +33,13 @@ public class Bottle extends Vessel {
 
     public void open() {
         System.out.printf(volume + " liter bottle opened!").println();
-        SparklingWater water = new SparklingWater(volume);
+        this.water = new SparklingWater(volume);
         water.setOpened(true);
     }
 
     public void warm(int temperature) {
+        water.getTemperature();
         System.out.printf("Warming water to: %s", temperature).println();
-    }
-
-    public double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
-    }
-
-    public double getDiameter() {
-        return diameter;
-    }
-
-    public void setDiameter(double diameter) {
-        this.diameter = diameter;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
     }
 
     public SparklingWater getWater() {

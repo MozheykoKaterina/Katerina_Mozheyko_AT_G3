@@ -6,17 +6,9 @@ public class Car {
 
     public static void main(String[] args) {
 
-        List<String> cars = new LinkedList<>();
-        cars.add("Мерсы");
-        cars.add("Ауди");
-        cars.add("Жигуль");
-        cars.add("Рено");
-        cars.add("Жигуль");
-        cars.add("Жигуль");
-        cars.add("Ауди");
+        ArrayList<String> cars = new ArrayList<>(Arrays.asList("Мерсы", "Ауди", "Жигуль", "Рено", "Жигуль", "Жигуль", "Ауди"));
 
-
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < cars.size(); i++) {
             if (cars.get(i) != null) {
                 if (cars.get(i).length() > 4) {
                     cars.remove(i);
