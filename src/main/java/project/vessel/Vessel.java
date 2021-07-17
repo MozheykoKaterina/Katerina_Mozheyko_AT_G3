@@ -4,12 +4,12 @@ import main.java.project.material.Material;
 
 public abstract class Vessel {
 
-    double volume;
-    double diameter;
-    int weight;
-    Material material;
+    private double volume;
+    private double diameter;
+    private double weight;
+    public Material material;
 
-    public Vessel(double volume, double diameter, int weight, Material material) {
+    public Vessel(double volume, double diameter, double weight, Material material) {
         this.volume = volume;
         this.diameter = diameter;
         this.weight = weight;
@@ -32,11 +32,11 @@ public abstract class Vessel {
         this.diameter = diameter;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

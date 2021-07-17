@@ -2,38 +2,29 @@ package main.java.tasks.week5.homeWork;
 
 import main.java.tasks.week5.homeWork.fields.Person;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class People {
 
     public static void main(String[] args) {
 
-        Map<Integer, String> peoples = new HashMap<Integer, String>();
-        Person person = new Person(32, "Коля");
-        Person person1 = new Person(24, "Оля");
-        Person person2 = new Person(55, "Вася");
-        Person person3 = new Person(63, "Маша");
-        peoples.put(person.getAge(), person.getName());
-        peoples.put(person1.getAge(), person1.getName());
-        peoples.put(person2.getAge(), person2.getName());
-        peoples.put(person3.getAge(), person3.getName());
+        List<Person> people = Arrays.asList(
+                new Person(32, "Коля"),
+                new Person(24, "Оля"),
+                new Person(55, "Вася"),
+                new Person(63, "Маша"));
 
-        for (int people : peoples.keySet()) {
-            System.out.print(people + " ");
-        }
+        people.stream().map(x -> x.getAge() + " ").forEach(System.out::print);
+
         System.out.println();
 
-        for (String people : peoples.values()) {
-            System.out.print(people + " ");
-        }
+        people.stream().map(x -> x.getName() + " ").forEach(System.out::print);
+
         System.out.println();
 
-        for (int i = 0; i < 4; i++) {
-            System.out.println(peoples.toString());
-
-        }
-
-
+        people.stream().map(x -> x.toString() + " ").forEach(System.out::println);
     }
 }

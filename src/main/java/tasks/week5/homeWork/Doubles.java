@@ -1,34 +1,24 @@
 package main.java.tasks.week5.homeWork;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Doubles {
 
     public static void main(String[] args) {
 
-        Double[] array = {33.42, 34.3, 0.79, 2.3426, 6.8, 13.24, 5.5, 769.9};
-        ArrayList<Double> doubles = new ArrayList(Arrays.asList(array));
+        List<Double> doubles = Arrays.asList(33.42, 34.3, 0.79, 2.3426, 6.8, 13.24, 5.5, 769.9);
 
-        for (Double num : doubles) {
-            System.out.print(num + " ");
-        }
+        doubles.stream().map(x -> x + " ").forEach(System.out::print);
+
         System.out.println();
 
-        double multiplication = 1;
-        for (Double num : doubles) {
-            multiplication = multiplication * num;
-        }
-        System.out.println(multiplication);
+        System.out.println(doubles.stream().reduce((x, y) -> x * y).get());
 
-        double sum = 0;
-        for (Double num : doubles) {
-            sum = sum + Math.ceil(num) - num;
-        }
-        System.out.println(sum);
+        System.out.println(doubles.stream().map(x -> Math.ceil(x) - x).reduce((x, y) -> x + y).get());
 
-        for (int i = 0; i < 8; i++) {
-            System.out.print(doubles.get(i).intValue() + " ");
-        }
+        doubles.stream().map(Double::intValue).map(x -> x + " ").forEach(System.out::print);
+
+        System.out.println();
     }
 }

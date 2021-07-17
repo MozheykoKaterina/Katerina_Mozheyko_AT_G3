@@ -1,6 +1,7 @@
-package main.java.project.liquid;
+package main.java.project.stuff;
 
-import main.java.project.object.Bubble;
+import main.java.project.stuff.Bubble;
+import main.java.project.stuff.Water;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +12,7 @@ public class SparklingWater extends Water {
     private Bubble bubble;
 
     public SparklingWater(double volume) {
+
         isOpened(volume);
     }
 
@@ -21,6 +23,7 @@ public class SparklingWater extends Water {
     public void setOpened(boolean isOpened) {
         this.isOpened = true;
         System.out.printf("Water is open").println();
+
     }
 
     private void isOpened(double volume) {

@@ -1,22 +1,16 @@
 package main.java.tasks.week5.homeWork;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Car {
 
     public static void main(String[] args) {
 
-        ArrayList<String> cars = new ArrayList<>(Arrays.asList("Мерсы", "Ауди", "Жигуль", "Рено", "Жигуль", "Жигуль", "Ауди"));
+        List<String> cars = Arrays.asList("Мерсы", "Ауди", "Жигуль", "Рено", "Жигуль", "Жигуль", "Ауди");
 
-        for (int i = 0; i < cars.size(); i++) {
-            if (cars.get(i) != null) {
-                if (cars.get(i).length() > 4) {
-                    cars.remove(i);
-                    i = i - 1;
-                } else {
-                    System.out.print(cars.get(i) + " ");
-                }
-            }
-        }
+        cars.stream().map(x -> "\"" + x + "\"").forEach(System.out::println);
+
+        System.out.println(cars.stream().filter(x -> x.length() > 4).collect(Collectors.toList()));
     }
 }

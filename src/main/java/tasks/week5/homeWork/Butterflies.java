@@ -1,39 +1,21 @@
 package main.java.tasks.week5.homeWork;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Butterflies {
 
     public static void main(String[] args) {
 
-        List<String> butterflies = new ArrayList<>();
-        butterflies.add("Common blue");
-        butterflies.add("Swallowtail");
-        butterflies.add("Aglais io");
-        butterflies.add("Common blue");
+        List<String> butterflies = Arrays.asList("Common blue", "Swallowtail", "Aglais io", "Common blue");
 
-        for (String butterflie : butterflies) {
-            System.out.print("\"" + butterflie + "\"" + " ");
-        }
-        System.out.println();
+        System.out.println(butterflies.stream().map(x -> "\"" + x + "\"").collect(Collectors.toList()));
 
-        int count = 0;
-        for (String butterflie : butterflies) {
-            if (butterflie.contains("o")) {
-                count++;
-            }
-        }
-        System.out.printf(String.valueOf(count)).println();
+        System.out.println(butterflies.stream().filter(x -> x.contains("o")).collect(Collectors.toList()).stream().count());
 
-        for (int i = 0; i < 4; i++) {
-            System.out.print(butterflies.get(i) + " ");
-        }
+        butterflies.stream().map(x -> x + " ").forEach(System.out::print);
 
-        System.out.println();
-
-        for (String butterflie : butterflies) {
-            System.out.print(butterflie + "\n");
-        }
+        butterflies.stream().map(x -> x + " ").forEach(System.out::println);
     }
 }
