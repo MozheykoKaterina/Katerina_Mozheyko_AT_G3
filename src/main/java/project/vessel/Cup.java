@@ -1,56 +1,42 @@
 package main.java.project.vessel;
 
-import main.java.project.material.Glass;
 import main.java.project.material.Material;
-import main.java.project.material.Plastic;
+import main.java.project.stuff.Transformable;
 
-public class Cup extends Vessel {
+public class Cup extends Vessel implements Containable {
 
-    private double volume;
-    private double diameter;
-    private int weight;
-    private Material material;
-
-    public Cup (double volume, double diameter, int weight, Material material) {
-        super(volume, diameter, weight, material);
+    public Cup (double volume, Material material) {
+        super(volume, 8, material.getDensity() * volume / 4, material);
     }
 
-    public Cup() {
-        super(0.3, 10, 200, new Plastic());
+
+    @Override
+    public void addStuff(Transformable stuff) {
+
     }
 
-    interface Containable {
+    @Override
+    public Transformable removeStuff() {
+        return null;
     }
 
-    public double getVolume() {
-        return volume;
+    @Override
+    public boolean isEmpty() {
+        return false;
     }
 
-    public void setVolume(double volume) {
-        this.volume = volume;
+    @Override
+    public int getFreeSpace() {
+        return 0;
     }
 
-    public double getDiameter() {
-        return diameter;
+    @Override
+    public void open() {
+
     }
 
-    public void setDiameter(double diameter) {
-        this.diameter = diameter;
-    }
+    @Override
+    public void close() {
 
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public Material getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(Material material) {
-        this.material = material;
     }
 }

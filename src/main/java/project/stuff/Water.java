@@ -1,11 +1,18 @@
-package main.java.project.liquid;
+package main.java.project.stuff;
 
-import main.java.project.boxing.Transformable;
+import main.java.project.stuff.Transformable;
 
 public class Water implements Transformable {
 
+    @Override
+    public void setOpened() {
+    }
+
+    public void setTemperature(int temperature) {
+        this.temperature = temperature;
+    }
+
     private String color = "no";
-    private String transparency = "transparent";
     private String smell = "no";
     private int temperature = 0;
 
@@ -21,14 +28,6 @@ public class Water implements Transformable {
         this.color = color;
     }
 
-    public String getTransparency() {
-        return transparency;
-    }
-
-    public void setTransparency(String transparency) {
-        this.transparency = transparency;
-    }
-
     public String getSmell() {
         return smell;
     }
@@ -39,10 +38,6 @@ public class Water implements Transformable {
 
     public int getTemperature() {
         return temperature;
-    }
-
-    public void setTemperature(int temperature) {
-        this.temperature = temperature;
     }
 
 }

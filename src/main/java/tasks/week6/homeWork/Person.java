@@ -1,27 +1,23 @@
-package main.java.tasks.week6.classWork;
+package main.java.tasks.week6.homeWork;
 
 public class Person {
 
     public String name;
+    public String surname;
     public int age;
-    public Sex sex;
 
-    public Person(String name, int age, Sex sex) {
+    public Person(String name, String surname, int age) {
         this.name = name;
+        this.surname = surname;
         this.age = age;
-        this.sex = sex;
-    }
-
-    public enum Sex {
-        MAN, WOMEN
     }
 
     @Override
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
                 ", age=" + age +
-                ", sex=" + sex +
                 '}';
     }
 }
