@@ -1,4 +1,4 @@
-package main.java.tasks.week7;
+package main.java.tasks.week7.classWork;
 
 import static java.lang.Math.atan;
 import static java.lang.Math.tan;

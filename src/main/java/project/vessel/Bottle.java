@@ -15,13 +15,6 @@ public class Bottle extends Vessel implements Containable {
         super(volume, 2, material.getDensity() * volume / 4, material);
         this.water = new SparklingWater(volume);
         System.out.printf("Bottle " + volume + " liter and " + material.getDensity() * volume / 4 + " weight liter bottle created!").println();
-        Bubble[] bubbles = new Bubble[(int)(volume * 10000)];
-        List<Bubble> bubble = Arrays.asList(bubbles);
-        for (int i = 0; i < bubble.size(); i++) {
-            bubble.set(i, new Bubble());
-        }
-        water.pump(bubble);
-
     }
 
     @Override
@@ -46,8 +39,7 @@ public class Bottle extends Vessel implements Containable {
 
     public void open() {
         System.out.printf(getVolume() + " liter bottle opened!").println();
-        this.water = new SparklingWater(getVolume());
-        water.setOpened(true);
+        water.setOpen();
     }
 
     @Override
@@ -56,7 +48,7 @@ public class Bottle extends Vessel implements Containable {
     }
 
     public void warm(int temperature) {
-        water.getTemperature();
+        water.setTemperature(temperature);;
         System.out.printf("Warming water to: %s", temperature).println();
     }
 

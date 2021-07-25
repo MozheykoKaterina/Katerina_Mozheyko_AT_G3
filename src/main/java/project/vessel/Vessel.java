@@ -2,7 +2,7 @@ package main.java.project.vessel;
 
 import main.java.project.material.Material;
 
-public abstract class Vessel {
+public abstract class Vessel implements Containable {
 
     private double volume;
     private double diameter;
@@ -15,6 +15,9 @@ public abstract class Vessel {
         this.weight = weight;
         this.material = material;
     }
+
+    public void open(){
+            };
 
     public double getVolume() {
         return volume;

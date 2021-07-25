@@ -1,4 +1,4 @@
-package main.java.tasks.week7;
+package main.java.tasks.week7.classWork;
 
 import java.util.stream.IntStream;
 
