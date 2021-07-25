@@ -12,7 +12,6 @@ public class Cup extends Vessel implements Containable {
 
     @Override
     public void addStuff(Transformable stuff) {
-
     }
 
     @Override

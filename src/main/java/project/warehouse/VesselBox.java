@@ -13,6 +13,12 @@ public class VesselBox implements Serializable {
     private List<Containable> box;
     private long id;
 
+    public VesselBox(String name, List<Containable> box) {
+        this.name = name;
+        this.capacity = capacity;
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,12 +30,6 @@ public class VesselBox implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(name, capacity, box, id);
-    }
-
-    public VesselBox(String name, int capacity, long id) {
-        this.name = name;
-        this.capacity = capacity;
-        this.id = id;
     }
 
     public long getId() {

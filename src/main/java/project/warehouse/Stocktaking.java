@@ -1,16 +1,17 @@
 package main.java.project.warehouse;
 
+import main.java.project.material.Material;
+import main.java.project.stuff.SparklingWater;
+import main.java.project.vessel.Bottle;
+
 import java.io.*;
 
 public class Stocktaking {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        registerBox(new VesselBox("vessel", 25, 1));
-        readSer();
-
-    }
-
-    private Stocktaking() {
+        //registerBox();
+        //readSer();
+        new Factory().createVesselBox(25, 0.5, Material.PLASTIC, new SparklingWater(0.5), new Bottle(0.5, Material.PLASTIC));
     }
 
     public static void registerBox(VesselBox box) throws IOException {
@@ -33,7 +34,7 @@ public class Stocktaking {
         FileInputStream fis = new FileInputStream("t.tmp");
         ObjectInputStream ois = new ObjectInputStream(fis);
         //Warehouse box = (Warehouse) ois.readObject();
-        System.out.println(fis);
+        System.out.println(fis.toString());
         ois.close();
 
     }
