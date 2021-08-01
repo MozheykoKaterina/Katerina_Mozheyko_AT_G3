@@ -11,7 +11,7 @@ public class Stocktaking {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         //registerBox();
         //readSer();
-        new Factory().createVesselBox(25, 0.5, Material.PLASTIC, new SparklingWater(0.5), new Bottle(0.5, Material.PLASTIC));
+        new Factory().createVesselBox(25, 0.5, Material.PLASTIC, new SparklingWater(), new Bottle(0.5, Material.PLASTIC));
     }
 
     public static void registerBox(VesselBox box) throws IOException {

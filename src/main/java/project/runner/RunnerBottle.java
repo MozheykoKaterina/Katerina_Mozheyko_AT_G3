@@ -13,6 +13,9 @@ public class RunnerBottle {
         Bottle bootle2 = new Bottle(1, Material.GLASS);
         Bottle bootle3 = new Bottle(1.5, Material.GLASS);
 
+        bottle.addStuff(new SparklingWater());
+        bootle2.addStuff(new SparklingWater());
+        bootle3.addStuff(new SparklingWater());
 
         bottle.warm(22);
         bootle2.warm(5);

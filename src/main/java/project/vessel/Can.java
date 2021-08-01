@@ -5,13 +5,14 @@ import main.java.project.stuff.Transformable;
 
 public class Can extends Vessel implements Containable {
 
+    private Transformable stuff;
+
     public Can(double volume, Material material) {
-        super(volume, 10, material.getDensity() * volume / 4, material);
+        super(volume, 10, material);
     }
 
     @Override
     public void addStuff(Transformable stuff) {
-
     }
 
     @Override
@@ -25,21 +26,10 @@ public class Can extends Vessel implements Containable {
     }
 
     @Override
-    public int getFreeSpace() {
-        return 0;
-    }
-
-    @Override
     public void open() {
-
     }
 
     @Override
-    public void close() {
-
+    public void warm(int temperature) {
     }
-
-    public void setOpened() {
-    }
-
 }
