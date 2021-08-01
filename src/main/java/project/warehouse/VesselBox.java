@@ -13,10 +13,12 @@ public class VesselBox implements Serializable {
     private List<Containable> box;
     private long id;
 
-    public VesselBox(String name, List<Containable> box) {
+    public VesselBox(int id, String name, int capacity, List<Containable> box) {
         this.name = name;
         this.capacity = capacity;
         this.id = id;
+        this.box = box;
+        System.out.println("Create box " + capacity);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package main.java.project.stuff;
 
-import main.java.project.stuff.Transformable;
-
 public class Water implements Transformable {
 
     @Override
@@ -15,10 +13,6 @@ public class Water implements Transformable {
     private String color = "no";
     private String smell = "no";
     private int temperature = 0;
-
-    public Water() {
-        int temperature = 0;
-    }
 
     public String getColor() {
         return color;
@@ -39,5 +33,4 @@ public class Water implements Transformable {
     public int getTemperature() {
         return temperature;
     }
-
 }

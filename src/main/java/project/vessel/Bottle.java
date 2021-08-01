@@ -9,17 +9,18 @@ import java.util.List;
 
 public class Bottle extends Vessel implements Containable {
 
-    private SparklingWater water;
+    private Transformable stuff;
 
     public Bottle(double volume, Material material) {
-        super(volume, 2, material.getDensity() * volume / 4, material);
-        this.water = new SparklingWater(volume);
+        super(volume, 2, material);
+        setVolume(volume);
         System.out.printf("Bottle " + volume + " liter and " + material.getDensity() * volume / 4 + " weight liter bottle created!").println();
     }
 
     @Override
     public void addStuff(Transformable stuff) {
-
+        this.stuff = stuff;
+        System.out.println("The bottle contains " + getVolume() + " liter of water");
     }
 
     @Override
@@ -29,34 +30,20 @@ public class Bottle extends Vessel implements Containable {
 
     @Override
     public boolean isEmpty() {
+        if (stuff == null) {
+            System.out.printf(getVolume() + " bottle is empty").println();
+            return true;
+        }
         return false;
     }
-
-    @Override
-    public int getFreeSpace() {
-        return 0;
-    }
-
     public void open() {
         System.out.printf(getVolume() + " liter bottle opened!").println();
-        water.setOpen();
-    }
-
-    @Override
-    public void close() {
-
+        stuff.setOpened();
     }
 
     public void warm(int temperature) {
-        water.setTemperature(temperature);;
+        stuff.setTemperature(temperature);
         System.out.printf("Warming water to: %s", temperature).println();
     }
 
-    public SparklingWater getWater() {
-        return water;
-    }
-
-    public void setWater(SparklingWater water) {
-        this.water = water;
-    }
 }

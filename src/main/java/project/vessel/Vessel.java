@@ -9,15 +9,12 @@ public abstract class Vessel implements Containable {
     private double weight;
     public Material material;
 
-    public Vessel(double volume, double diameter, double weight, Material material) {
+    public Vessel(double volume, double diameter, Material material) {
         this.volume = volume;
         this.diameter = diameter;
-        this.weight = weight;
+        this.weight = material.getDensity() * volume / 4;
         this.material = material;
     }
-
-    public void open(){
-            };
 
     public double getVolume() {
         return volume;
